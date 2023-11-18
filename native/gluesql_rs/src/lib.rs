@@ -1,3 +1,5 @@
+#![allow(non_snake_case)]
+
 mod data {
     pub mod column_def;
     pub mod schema_index;
