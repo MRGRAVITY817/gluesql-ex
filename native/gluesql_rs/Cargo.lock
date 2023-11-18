@@ -409,6 +409,8 @@ version = "0.1.0"
 dependencies = [
  "gluesql-core",
  "rustler",
+ "serde",
+ "serde_json",
 ]
 
 [[package]]

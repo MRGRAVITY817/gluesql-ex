@@ -1,8 +1,19 @@
-use gluesql_core::prelude::*;
+mod data {
+    pub mod schema_index;
+}
 
-// #[rustler::nif]
-// fn add(a: i64, b: i64) -> i64 {
-//     a + b
-// }
+use data::schema_index::SchemaIndex;
+use gluesql_core::ast::ColumnDef;
+use rustler::NifStruct;
+use serde::{Deserialize, Serialize};
 
-rustler::init!("Elixir.GlueSQL.RS", [add]);
+#[derive(NifStruct, Clone, Debug, Serialize, Deserialize, PartialEq, Eq)]
+#[module = "GlueSQL.RS.Schema"]
+struct Schema {
+    table_name: String,
+    column_defs: Option<Vec<ColumnDef>>,
+    indexes: Vec<SchemaIndex>,
+    engine: Option<String>,
+}
+
+rustler::init!("Elixir.GlueSQL.RS", [Schema]);
