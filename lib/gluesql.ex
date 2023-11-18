@@ -1,4 +1,4 @@
-defmodule Gluesql do
+defmodule GlueSQL do
   @moduledoc """
   Documentation for `Gluesql`.
   """
@@ -13,6 +13,6 @@ defmodule Gluesql do
 
   """
   def hello do
-    :world
+    # hello
   end
 end
