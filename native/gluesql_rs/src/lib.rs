@@ -1,9 +1,9 @@
 mod data {
+    pub mod column_def;
     pub mod schema_index;
 }
 
-use data::schema_index::SchemaIndex;
-use gluesql_core::ast::ColumnDef;
+use data::{column_def::ColumnDef, schema_index::SchemaIndex};
 use rustler::NifStruct;
 use serde::{Deserialize, Serialize};
 
@@ -16,4 +16,4 @@ struct Schema {
     engine: Option<String>,
 }
 
-rustler::init!("Elixir.GlueSQL.RS", [Schema]);
+rustler::init!("Elixir.GlueSQL.RS", []);
